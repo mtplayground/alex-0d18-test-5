@@ -1,0 +1,12 @@
+{
+  "name": "alex-0d18-test-5",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "install:browsers": "playwright install chromium",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.60.0"
+  }
+}
