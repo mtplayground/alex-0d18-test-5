@@ -13,9 +13,80 @@
     </header>
 
     <main>
-      <section aria-labelledby="page-start">
-        <h2 id="page-start">Ready for content</h2>
-        <p>This page provides the initial semantic structure for the project.</p>
+      <section aria-labelledby="owl-heading">
+        <h2 id="owl-heading">Stylized owl</h2>
+        <figure>
+          <svg
+            role="img"
+            aria-labelledby="owl-title owl-description"
+            data-testid="owl-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 360"
+            width="320"
+            height="360"
+          >
+            <title id="owl-title">Stylized owl composed from SVG primitives</title>
+            <desc id="owl-description">
+              A symmetrical owl with a rounded body, two large eyes, a beak, wings, and feet.
+            </desc>
+
+            <g id="owl-body" role="group" data-part="body" aria-labelledby="owl-body-title">
+              <title id="owl-body-title">Body</title>
+              <ellipse cx="160" cy="184" rx="102" ry="126" fill="#6b4634"></ellipse>
+              <ellipse cx="160" cy="196" rx="70" ry="88" fill="#d8ad7a"></ellipse>
+              <path
+                d="M72 103 100 52 128 99a106 106 0 0 0-56 4Z"
+                fill="#5a382d"
+              ></path>
+              <path
+                d="M192 99 220 52 248 103a106 106 0 0 0-56-4Z"
+                fill="#5a382d"
+              ></path>
+            </g>
+
+            <g id="owl-wings" role="group" data-part="wings" aria-labelledby="owl-wings-title">
+              <title id="owl-wings-title">Wings</title>
+              <path
+                d="M82 160c-31 28-32 82-3 113 24-20 36-56 28-95Z"
+                fill="#4a3028"
+              ></path>
+              <path
+                d="M238 160c31 28 32 82 3 113-24-20-36-56-28-95Z"
+                fill="#4a3028"
+              ></path>
+            </g>
+
+            <g id="owl-eyes" role="group" data-part="eyes" aria-labelledby="owl-eyes-title">
+              <title id="owl-eyes-title">Eyes</title>
+              <circle cx="123" cy="136" r="38" fill="#f5e9c9"></circle>
+              <circle cx="197" cy="136" r="38" fill="#f5e9c9"></circle>
+              <circle cx="123" cy="136" r="18" fill="#1f2933"></circle>
+              <circle cx="197" cy="136" r="18" fill="#1f2933"></circle>
+              <circle cx="116" cy="128" r="6" fill="#ffffff"></circle>
+              <circle cx="190" cy="128" r="6" fill="#ffffff"></circle>
+            </g>
+
+            <g id="owl-beak" role="group" data-part="beak" aria-labelledby="owl-beak-title">
+              <title id="owl-beak-title">Beak</title>
+              <polygon points="160,154 140,184 180,184" fill="#e89b2f"></polygon>
+            </g>
+
+            <g id="owl-feet" role="group" data-part="feet" aria-labelledby="owl-feet-title">
+              <title id="owl-feet-title">Feet</title>
+              <path
+                d="M116 304h40l-20 24Z"
+                fill="#d9822b"
+              ></path>
+              <path
+                d="M164 304h40l-20 24Z"
+                fill="#d9822b"
+              ></path>
+              <line x1="136" y1="304" x2="136" y2="332" stroke="#8f4f1f" stroke-width="6" stroke-linecap="round"></line>
+              <line x1="184" y1="304" x2="184" y2="332" stroke="#8f4f1f" stroke-width="6" stroke-linecap="round"></line>
+            </g>
+          </svg>
+          <figcaption>Inline SVG owl built from labeled primitive shapes.</figcaption>
+        </figure>
       </section>
     </main>
   </body>
