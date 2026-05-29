@@ -1,24 +1,39 @@
 Architecture plan
 
 Scope reviewed
-- Issue #1: Initialize repo and HTML skeleton.
-- PRODUCT.md is not present, and the issue does not define a product brand/name, so no additional brand naming should be introduced.
+- Issue #3: Build the owl as inline SVG.
+- Issue #4: Page layout and responsive styling.
+- Issue #5: End-to-end smoke test and cross-viewport check.
+- PRODUCT.md defines this as a minimal static web page skeleton with plain HTML and CSS, no framework, no build pipeline, no JavaScript, backend, or database.
 
 Module structure and file organization
-- Keep the project as a minimal static site.
-- Root files:
-  - index.html: semantic HTML document with head metadata, title, body landmark structure, and a stylesheet link.
-  - styles.css: empty or minimal stylesheet stub linked from index.html.
-  - README.md: existing project readme.
+- Keep the project as a root-level static site.
+- index.html:
+  - Replace the placeholder content with the final semantic page structure.
+  - Inline the owl SVG directly in the main content area.
+  - Group SVG primitives with labeled parts for body, eyes, beak, wings, and feet.
+  - Preserve document metadata, viewport metadata, and linked stylesheet.
+- styles.css:
+  - Own all page-level presentation: viewport layout, background, typography, responsive scaling, SVG sizing, and caption/title spacing.
+  - Use CSS custom properties only if they clarify repeated colors or sizing.
+- tests/ or e2e/:
+  - Add Playwright smoke coverage only when issue #5 is implemented.
+  - Keep test files separate from static page source.
+- package.json and Playwright config:
+  - Add only when issue #5 needs a runnable browser test command.
 
 Shared types and modules
-- None. This issue does not require JavaScript, generated assets, package tooling, or shared application types.
+- None for issues #3 and #4. The app remains plain HTML/CSS.
+- Issue #5 may introduce test helper selectors, but no runtime application types are needed.
 
 Dependencies between issues
-- Issue #1 is the foundation for any later UI or styling work because it establishes the root HTML entry point and CSS file.
-- Later issues should build on the static file structure unless they explicitly introduce a framework or build tool.
+- Issue #3 should be implemented first because the page layout and smoke test need a real owl SVG target.
+- Issue #4 depends on the SVG structure from issue #3 so responsive sizing can be applied to stable elements and labels.
+- Issue #5 depends on issues #3 and #4 because it should validate the final rendered SVG and completed responsive layout at mobile, tablet, and desktop widths.
 
 Key design decisions
-- Use plain HTML and CSS because the current scope is static boilerplate and no tooling is required.
-- Keep the skeleton accessible and semantic from the start, using standard document metadata and page landmarks.
-- Avoid adding package managers, build pipelines, or dependencies until an issue requires them.
+- Continue with plain HTML and CSS until a future issue explicitly requires more tooling.
+- Use inline SVG instead of image files so the owl remains inspectable, accessible, and directly testable.
+- Give the SVG a stable accessible name and stable selectors or data attributes suitable for Playwright assertions.
+- Keep the visual system modest and static-site friendly: centered composition, responsive SVG sizing, and no decorative dependencies.
+- Introduce Playwright only for end-to-end testing, not for application runtime behavior.
