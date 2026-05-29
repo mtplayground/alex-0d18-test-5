@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "install:browsers": "playwright install chromium",
+    "start": "node server.js",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
