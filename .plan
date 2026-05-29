@@ -1,0 +1,24 @@
+Architecture plan
+
+Scope reviewed
+- Issue #1: Initialize repo and HTML skeleton.
+- PRODUCT.md is not present, and the issue does not define a product brand/name, so no additional brand naming should be introduced.
+
+Module structure and file organization
+- Keep the project as a minimal static site.
+- Root files:
+  - index.html: semantic HTML document with head metadata, title, body landmark structure, and a stylesheet link.
+  - styles.css: empty or minimal stylesheet stub linked from index.html.
+  - README.md: existing project readme.
+
+Shared types and modules
+- None. This issue does not require JavaScript, generated assets, package tooling, or shared application types.
+
+Dependencies between issues
+- Issue #1 is the foundation for any later UI or styling work because it establishes the root HTML entry point and CSS file.
+- Later issues should build on the static file structure unless they explicitly introduce a framework or build tool.
+
+Key design decisions
+- Use plain HTML and CSS because the current scope is static boilerplate and no tooling is required.
+- Keep the skeleton accessible and semantic from the start, using standard document metadata and page landmarks.
+- Avoid adding package managers, build pipelines, or dependencies until an issue requires them.
